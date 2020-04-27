@@ -20,7 +20,7 @@ public class RepeateChar {
 	         if (count > 1) {
 	            System.out.print(s1.charAt(0)+""+count);    
 	         }
-
+		//Replacing the matched char with ""
 	         String character = String.valueOf(s1.charAt(0)).trim();
 	         s1 = s1.replaceAll(character,"");
 	         len -= count;
