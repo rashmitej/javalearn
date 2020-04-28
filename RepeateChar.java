@@ -17,12 +17,7 @@ public class RepeateChar {
 		
 		System.out.println("Example1: input aaaabbcc");
 		countRepeatChar("aaaabbcc");
-		
-		System.out.println("\n Example2: input abcababc");
-		countRepeatChar("abcababc");
-		
-		System.out.println("\n Example3: null");
-		countRepeatChar(null);
+
 		
 	}
 	public static void countRepeatChar(String strRep){
