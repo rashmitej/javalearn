@@ -1,44 +1,55 @@
-import java.util.Scanner;
+package StringPgms;
+/*Write a method that can take an uncompressed version of a string and return a compressed version.
+
+	     Eg:
+	     1. input aaaabbcc
+	        output a4b2c2
+	     2. input abcababc
+	        output a3b3c2 
+	     3. input "" or null
+	        output IllegalArgumentException    
+	     */
+
 
 public class RepeateChar {
 
-	    public static void main(String[] args)throws Exception{
-	   	
-	        System.out.println("Enter the string: ");
-	        Scanner sc = new Scanner(System.in);
-	        try {
-	        if (sc.hasNextInt()==false) {
-	        String s1 = sc.nextLine();
-	        int len = s1.length();
-	        while(len > 0) {
-	        int count = 1;            
-	         for(int j=1;j<len;j++){
-	            if(s1.charAt(0)==s1.charAt(j)){
-	                count++;
-	            }
-	         }
-	         if (count > 1) {
-	            System.out.print(s1.charAt(0)+""+count);    
-	         }
-		//Replacing the matched char with ""
-	         String character = String.valueOf(s1.charAt(0)).trim();
-	         s1 = s1.replaceAll(character,"");
-	         len -= count;
+	public static void main(String[] args) throws Exception {
+		
+		System.out.println("Example1: input aaaabbcc");
+		countRepeatChar("aaaabbcc");
+		
+		System.out.println("\n Example2: input abcababc");
+		countRepeatChar("abcababc");
+		
+		System.out.println("\n Example3: null");
+		countRepeatChar(null);
+		
+	}
+	public static void countRepeatChar(String strRep){
+		try {
 
-	       }
-	       } 
-	        
-	    }
-	    
-catch(IllegalStateException e) { 
-    System.out.println("Exception is: " + e);
-	    }
-	        finally {
-	        	  if(sc!=null)
-	        	    sc.close();
-	        }
+			if (strRep.length() == 0 || strRep == null) {
+				System.out.println("IllegalArgumentException");
+			} else {
+				int len = strRep.length();
+				while (len > 0) {
+					int count = 1;
+					for (int j = 1; j < len; j++) {
+						if (strRep.charAt(0) == strRep.charAt(j)) {
+							count++;
+						}
+					}
+					if (count >= 1) {
+						System.out.print(strRep.charAt(0) + "" + count);
+					}
+
+					String character = String.valueOf(strRep.charAt(0)).trim();
+					strRep = strRep.replaceAll(character, "");
+					len -= count;
+				}
+			}
+		} catch (Exception e) {
+			System.out.println("IllegalArgumentException");
+		}	
 	}
 }
-	   
-
-
