@@ -22,7 +22,11 @@ public class RepeateChar {
 		countRepeatChar("abcababc");
 		
 		System.out.println("\n Example3: null");
-		countRepeatChar(null);
+		countRepeatChar(null);	
+		
+		System.out.println("\n Example4: ");
+		countRepeatChar("");
+		
 		
 	}
 	public static void countRepeatChar(String strRep){
